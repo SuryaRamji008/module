@@ -1,0 +1,45 @@
+
+.logo {
+    font-size: 2rem;
+    color: rgb(238, 67, 67);
+    font-weight: bold;
+    text-align: center;
+  
+  }
+
+  .list {
+    display: flex;  
+    flex-direction: row;
+    justify-content:space-around;
+    padding: 2rem;
+    margin: 1rem 0;
+    background-color: #4b4b4b;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  /* .bookname{
+   margin-left:500px
+  }
+
+  .bookprice{
+    margin-left: 700px;
+    align-content: center;
+  }
+
+  .booklang{
+    margin-left: 500px;
+    align-content: flex-end;
+  } */
+
+  .button{
+    margin-left: 500px;
+    color: brown;
+    background-color:wheat;
+  }
+
+  .items{
+    color: cornsilk;
+  }
+
+  
