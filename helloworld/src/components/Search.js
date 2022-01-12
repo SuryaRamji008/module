@@ -34,13 +34,12 @@ function Search() {
       }, [])
   
       const search = (e) => {
-        var s = e.target.value
-        var sname = items.filter((post) => {
-          if(post.BookName === s || post.BookName.toLowerCase() === s || post.BookName.toUpperCase() === s)
-         return true
+        var s = e.target.value.toLowerCase()
+        var filteredResult = items.filter((value) => {
+          return value.BookName.toLowerCase().match(new RegExp(s,'g'))
         })
-         setsitems(sname)
-        }
+        setsitems(filteredResult)
+         }
 
        const navigate = (bn) => {
          history.push(`/Search/${bn}`)
