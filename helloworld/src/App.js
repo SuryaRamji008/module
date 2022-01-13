@@ -15,6 +15,7 @@ import Notfound from './components/Notfound';
 
 function App() {
 
+  const islogin = useSelector(state => state.custom.Login )
 
   return (
     <div>
@@ -23,16 +24,15 @@ function App() {
      <Route path = '/' exact>
         <Redirect to= '/Login'/>
       </Route>
-     <Route path = '/Login' exact>
+     {!islogin && <Route path = '/Login' exact>
         <Login/>
-      </Route>
-      {/* {login && <Route exact path="/Home" component={Home} />} */} 
-      <Route path = '/Home' exact>
+      </Route>}
+      {islogin && <Route path = '/Home' exact>
         <Home/>
-      </Route> 
-      <Route path = '/Cart' exact>
+      </Route>}
+      {islogin && <Route path = '/Cart' exact>
         <Cart/>
-      </Route>
+      </Route>}
       <Route path = '/iasBooks' exact>
         <Books/>
       </Route>

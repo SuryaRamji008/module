@@ -101,6 +101,11 @@ const customreducer = (state = {Login : false},action) => {
           Login : true
       }
   }
+  if(action.type === 'islogout'){
+    return {
+        Login : false
+    }
+}
   return state;
 }
 

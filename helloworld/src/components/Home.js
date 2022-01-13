@@ -1,10 +1,13 @@
 import React from 'react'
+import { useDispatch,useSelector } from 'react-redux'
 import { useHistory,Link } from 'react-router-dom'
 import classes from './Home.module.css'
 
 function Home() {
 
     const history = useHistory()
+    const dispatch = useDispatch()
+    const islogin = useSelector(state => state.custom.Login )
 
       const iaspage = () => {
           history.push('/iasBooks')
@@ -20,6 +23,8 @@ function Home() {
 
     const logouthandler = (e) => {
         e.preventDefault();
+        dispatch({type : 'islogout'})
+        console.log(islogin)
         history.replace('/Login')
     }
 

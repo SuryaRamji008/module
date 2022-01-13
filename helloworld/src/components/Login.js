@@ -106,13 +106,12 @@ export default function App() {
      .then((data) => {
        console.log(data)
        setiserror(false)
+       dispatch({type:'islogin'})
        history.replace('/Home')
      })
      .catch((err) => {
       console.log(err)
      })
-       dispatch({type:'islogin'})
-     
    }
 
   return (

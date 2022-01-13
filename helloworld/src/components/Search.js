@@ -1,15 +1,16 @@
 import React from 'react'
 import { useEffect,useState } from 'react'
 import classes from './Search.module.css'
-import {useHistory,Route,Switch} from 'react-router-dom'
-import Tinkle from './Books/Tinkle' ;
-import Jungle from './Books/Jungle';
+import {useHistory} from 'react-router-dom'
+// import Tinkle from './Books/Tinkle' ;
+// import Jungle from './Books/Jungle';
 
 
 function Search() {
 
     const [items,setitems] = useState([])
     const [sitems,setsitems] = useState([])
+
   
     const history = useHistory()
   
@@ -38,9 +39,9 @@ function Search() {
         var filteredResult = items.filter((value) => {
           return value.BookName.toLowerCase().match(new RegExp(s,'g'))
         })
-        setsitems(filteredResult)
-         }
-
+          setsitems(filteredResult)
+        }
+        
        const navigate = (bn) => {
          history.push(`/Search/${bn}`)
        }
@@ -52,13 +53,13 @@ function Search() {
              </header>
              <div className = {classes.input}><input style ={{padding:'5px'}} type='text' onChange = {search} /></div>
              <div style = {{marginTop:'200px'}}>
-              {sitems.map((item,index) => {
+              {sitems.length ? sitems.map((item,index) => {
               return (
                 <div key={index} className = {classes.list}> 
                 <text className = {classes.items}><button onClick = {()=> {navigate(item.BookName)}}>{item.BookName}</button></text> <text className = {classes.items}>{item.amount}</text><text className = {classes.items}>{item.language}</text>
                 <button>order</button>
                 </div>)
-            })}</div>
+            }) : <h1 style={{textAlign : 'center'}}>Search Books to display</h1>}</div>
                
         </div>
     )
