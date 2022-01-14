@@ -124,7 +124,7 @@ export default function App() {
         {pninvalid ? (<h3 style={{ color: 'red',fontSize : '12px' }}>Enter valid Email Id</h3>) : ''}
         </div>
         <div><div className = {classes.label}><label>Password</label></div>
-        <div><input style = {inputstyle} onChange={Passwordhandler} ref = {password} onBlur = {passwordtouched}/></div></div>
+        <div><input type = "password" style = {inputstyle} onChange={Passwordhandler} ref = {password} onBlur = {passwordtouched}/></div></div>
         <div style = {{marginTop:'20px'}}>
         {pwinvalid ? (<h3 style={{ color: 'red',fontSize : '12px' }}>the password must include special character</h3>) : ''}
         {isformvalid && <button style = {{height:'25px'}} onClick = {loginhandler}>Submit</button>} 
